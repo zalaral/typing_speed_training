@@ -149,6 +149,14 @@ int random_generated_words_mode(int words_cnt, int word_len)
 		printf("Повторите строку:\n%s\n\n", rand_gen_word);
 		users_answer = read_str_from_user();
 		mistakes += mistakes_count(rand_gen_word, users_answer);
+		if(rand_gen_word != NULL){
+			free(rand_gen_word);
+			rand_gen_word = NULL;
+		}
+		if(users_answer != NULL){
+			free(users_answer);
+			users_answer = NULL;
+		}
 	}
 	return mistakes;
 }
@@ -168,6 +176,14 @@ int random_words_mode(int words_cnt)
 		printf("Повторите строку:\n%s\n\n", rand_word);
 		users_answer = read_str_from_user();
 		mistakes += mistakes_count(rand_word, users_answer);
+		if(rand_word != NULL){
+			free(rand_word);
+			rand_word = NULL;
+		}
+		if(users_answer != NULL){
+			free(users_answer);
+			users_answer = NULL;
+		}
 	}
 	return mistakes;
 }
@@ -194,6 +210,14 @@ int random_users_strings_mode(int strings_cnt)
 		printf("Повторите строку:\n%s\n\n", rand_word);
 		users_answer = read_str_from_user();
 		mistakes += mistakes_count(rand_word, users_answer);
+		if(rand_word != NULL){
+			free(rand_word);
+			rand_word = NULL;
+		}
+		if(users_answer != NULL){
+			free(users_answer);
+			users_answer = NULL;
+		}
 	}
 	return mistakes;
 }
