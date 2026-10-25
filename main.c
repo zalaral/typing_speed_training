@@ -281,6 +281,7 @@ int main()
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
 	#endif
+	srand(time(NULL));
 	while (1)
 	{
 		gamemode = get_gamemode(); /* Пользователь вводит режим */
